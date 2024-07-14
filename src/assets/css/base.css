@@ -1,0 +1,79 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-white: #ffffff;
+
+  --vt-c-black: #181818;
+
+  --vt-c-yellow: #fcba30;
+  --vt-c-orange: #ef7a19;
+  --vt-c-red: #e52314;
+
+  --vt-c-light-grey: #f7f7f7;
+
+  --vt-c-text-light-1: var(--vt-c-black);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-white);
+  --color-background-2: var(--vt-c-light-grey);
+  /*--color-background-soft: var(--vt-c-white-soft);*/
+  /*--color-background-mute: var(--vt-c-white-mute);*/
+
+  /*--color-border: var(--vt-c-divider-light-2);*/
+  /*--color-border-hover: var(--vt-c-divider-light-1);*/
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+  --color-border: rgba(0,0,0,.2);
+  --color-border-hover: var(--vt-c-orange);
+
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family: GT Eesti Pro Text, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 40px;
+  letter-spacing: normal;
+}
+
+a:hover, a:active, a.focus, a {
+  text-decoration: none;
+  color: var(--color-text);
+  user-select: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}

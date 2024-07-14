@@ -1,6 +1,11 @@
-import './assets/main.css'
+import './assets/css/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(Header)
+app.use(Footer)
+app.mount('#app')
