@@ -13,6 +13,9 @@
     <div class="container">
       <medical-center-card v-for="medicalCenter in medicalCenters" :key="medicalCenter.id" :medical-center="medicalCenter"></medical-center-card>
     </div>
+    <div class="container" style="grid-template-columns: 1fr;">
+      <div id="map" style="width: 100%; height:500px; border-radius: 10px; margin: 30px 0 30px 0;"></div>
+    </div>
   </main>
   <Footer/>
 </template>
@@ -21,6 +24,7 @@
 import MedicalCenterCard from './components/MedicalCenterCard.vue';
 
 import axios from "axios";
+import DG from "2gis-maps"
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 
@@ -38,18 +42,31 @@ export default {
     };
   },
   mounted() {
+    var map;
+    DG.then(function () {
+      map = DG.map('map', {
+        center: [57.91, 59.96],
+        zoom: 12
+      });
+    });
     axios.get('../public/data.json')
         .then(response => {
           this.medicalCenters = response.data;
+
+          for(const medicalCenter of this.medicalCenters) {
+            if (medicalCenter.latitude && medicalCenter.longitude) {
+              DG.marker([medicalCenter.latitude, medicalCenter.longitude]).addTo(map).bindPopup(medicalCenter.title + ' (' + medicalCenter.address + ')');
+            }
+          }
         })
         .catch(error => {
           console.error(error);
         });
+
   },
   methods: {
     updateMedicalCenters(filteredMedicalCenters) {
-      console.log(this.searchQuery)
-      this.medicalCenters = filteredMedicalCenters; // Update the filteredMedicalCenters property in App.vue
+      this.medicalCenters = filteredMedicalCenters;
     },
   },
 };

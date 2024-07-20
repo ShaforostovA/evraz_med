@@ -104,7 +104,7 @@ export default {
   cursor: pointer;
   text-align: center;
   min-height: 82px;
-  height: 100%;
+  max-height: 82px;
   display: flex;
   align-items: center;
   transition-duration: .3s;

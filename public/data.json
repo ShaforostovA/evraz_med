@@ -5,7 +5,9 @@
     "image": "public/img/1.jpg",
     "two_gis": "https://2gis.ru/ntagil/directions/points/%7C60.119768%2C57.886745%3B6333715257004541",
     "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/?ll=60.121915%2C57.886543&mode=routes&rtext=~57.887167%2C60.119705&rtt=auto&ruri=~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo0MDIwMzc5MTgwEroB0KDQvtGB0YHQuNGPLCDQodCy0LXRgNC00LvQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCT0L7RgNC90L7Rg9GA0LDQu9GM0YHQutC40Lkg0LPQvtGA0L7QtNGB0LrQvtC5INC-0LrRgNGD0LMsINC_0L7RgdGR0LvQvtC6INCX0L7QvdCw0LvRjNC90YvQuSwg0KbQtdC90YLRgNCw0LvRjNC90LDRjyDRg9C70LjRhtCwLCA3IgoNlHpwQhV1jGdC&z=16.63",
-    "google_map": "https://www.google.com/maps/dir//%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D1%83%D0%BB.,+7,+%D0%97%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9,+%D0%A1%D0%B2%D0%B5%D1%80%D0%B4%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB.,+622048/@57.887582,60.1146832,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x43ea7c6af1f2c401:0xe4f125b28135c91d!2m2!1d60.1195541!2d57.8875792?entry=ttu"
+    "google_map": "https://www.google.com/maps/dir//%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D1%83%D0%BB.,+7,+%D0%97%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9,+%D0%A1%D0%B2%D0%B5%D1%80%D0%B4%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB.,+622048/@57.887582,60.1146832,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x43ea7c6af1f2c401:0xe4f125b28135c91d!2m2!1d60.1195541!2d57.8875792?entry=ttu",
+    "latitude": 57.929604,
+    "longitude": 60.01164
   },
   {
     "title": "Нижнетуринская центральная городская больница",
@@ -13,7 +15,9 @@
     "image": "public/img/2.png",
     "two_gis": "https://2gis.ru/ntagil/directions/points/%7C59.868099%2C58.555853%3B70000001076532385",
     "yandex_map": "",
-    "google_map": ""
+    "google_map": "",
+    "latitude": "",
+    "longitude": ""
   },
   {
     "title": "Шалинская центральная городская больница",
@@ -21,7 +25,9 @@
     "image": "public/img/3.jpg",
     "two_gis": "https://2gis.ru/ntagil/directions/points/%7C59.24883%2C57.335241%3B70000001076432667",
     "yandex_map": "",
-    "google_map": ""
+    "google_map": "",
+    "latitude": "",
+    "longitude": ""
   },
   {
     "title": "Фельдшерско-акушерский пункт",
@@ -29,7 +35,9 @@
     "image": "public/img/4.jpg",
     "two_gis": "https://2gis.ru/ntagil/directions/points/%7C60.094359%2C57.17491%3B70000001083461604",
     "yandex_map": "",
-    "google_map": ""
+    "google_map": "",
+    "latitude": "",
+    "longitude": ""
   },
   {
     "title": "Нижнетуринская центральная городская больница",
@@ -37,7 +45,9 @@
     "image": "public/img/5.jpg",
     "two_gis": "https://2gis.ru/ntagil/directions/points/%7C60.189643%2C58.64222%3B70000001082005416",
     "yandex_map": "",
-    "google_map": ""
+    "google_map": "",
+    "latitude": "",
+    "longitude": ""
   },
   {
     "title": "Уральский клинический лечебно-реабилитационный центр им. В.В. Тетюхина",
@@ -45,6 +55,8 @@
     "image": "public/img/6.jpg",
     "two_gis": "https://2gis.ru/ntagil/directions/points/%7C59.960941%2C57.880167%3B70000001007161171",
     "yandex_map": "",
-    "google_map": ""
+    "google_map": "",
+    "latitude": "",
+    "longitude": ""
   }
 ]
