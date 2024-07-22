@@ -2,6 +2,9 @@
 @import 'base.css';
 @import 'fonts.css';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 #app {
   margin: 0 auto;
   font-weight: normal;
@@ -11,7 +14,7 @@
 }
 
 header {
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   z-index: 10;
 }
 

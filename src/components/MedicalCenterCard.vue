@@ -1,18 +1,16 @@
 <template>
   <div class="card">
-    <img :src="medicalCenter.image" alt="Изображение" class="card-image">
+    <div v-if="medicalCenter.image !== ''" class="card-image" :style="{ 'background-image': `url(${medicalCenter.image})` }"></div>
+    <div v-else class="card-image" :style="{ 'background-image': `url(public/img/no_med_img.png)` }"></div>
     <div class="card-content">
       <h3 class="card-title">{{ medicalCenter.title }}</h3>
       <p class="card-address">{{ medicalCenter.address }}</p>
       <div class="card-actions">
-        <a title="Построить маршрут 2gis" v-if="medicalCenter.two_gis != ''" :href="medicalCenter.two_gis" target="_blank" class="card-action-button two_gis">
-          <img src="./icons/2GIS_logo.svg" alt="2gis">
-        </a>
-        <a title="Построить маршрут Yandex Maps" v-if="medicalCenter.yandex_map != ''" :href="medicalCenter.yandex_map" target="_blank" class="card-action-button yandex_maps">
+        <a title="Построить маршрут Yandex Maps" v-if="selectedControlPoint != undefined && selectedControlPoint.latitude != undefined && selectedControlPoint.longitude && medicalCenter.latitude != '' && medicalCenter.longitude != '' && medicalCenter.yandex_map != ''" :href="medicalCenter.yandex_map + `?rtext=${this.selectedControlPoint.latitude}%2C${this.selectedControlPoint.longitude}~${medicalCenter.latitude}%2C${medicalCenter.longitude}&rtt=auto&ruri=~&z=18`" target="_blank" class="card-action-button yandex_maps">
           <img src="./icons/Color_icon_color.svg" alt="Yandex Maps">
         </a>
-        <a title="Построить маршрут Google Maps" v-if="medicalCenter.google_map != ''" :href="medicalCenter.google_map" target="_blank" class="card-action-button google_maps">
-          <img src="./icons/Google_Maps_Logo_2020.svg" alt="Google Maps">
+        <a title="Построить маршрут Yandex Maps" v-else-if="medicalCenter.yandex_map != '' && medicalCenter.latitude != '' && medicalCenter.longitude != ''" :href="medicalCenter.yandex_map + `?rtext=~${medicalCenter.latitude}%2C${medicalCenter.longitude}&rtt=auto&ruri=~&z=18`" target="_blank" class="card-action-button yandex_maps">
+          <img src="./icons/Color_icon_color.svg" alt="Yandex Maps">
         </a>
       </div>
     </div>
@@ -23,6 +21,16 @@
 export default {
   props: {
     medicalCenter: Object,
+    controlPoints: Array,
+    propSelectedControlPoint: String
+  },
+  mounted() {
+    this.selectedControlPoint = this.controlPoints[this.propSelectedControlPoint];
+  },
+  data() {
+    return {
+      selectedControlPoint: "",
+    }
   },
 }
 </script>
@@ -39,11 +47,12 @@ export default {
 
 .card-image {
   width: 100%;
-  min-height: 150px;
-  height: 40%;
-  object-fit: cover;
+  min-height: 200px;
   border-radius: 10px 10px 0 0;
   display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media (max-width: 600px) {
@@ -92,7 +101,7 @@ export default {
 
 .card-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   margin-top: 10px;
   gap: 10px;
 }
@@ -112,7 +121,7 @@ export default {
 
 .card-action-button:hover {
   border: 1px solid var(--color-border-hover);
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .card-action-button img {

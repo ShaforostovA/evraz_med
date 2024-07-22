@@ -1,6 +1,6 @@
-import './assets/css/main.css'
+import './assets/css/main.css';
 
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 import App from './App.vue'
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';

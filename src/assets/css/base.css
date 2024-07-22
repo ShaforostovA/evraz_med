@@ -61,10 +61,10 @@ body {
 }
 
 h1, h2 {
-  font-weight: 500;
-  line-height: 1.2;
-  font-size: 40px;
-  letter-spacing: normal;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  font-size: 40px !important;
+  letter-spacing: normal !important;
 }
 
 a:hover, a:active, a.focus, a {
@@ -74,6 +74,6 @@ a:hover, a:active, a.focus, a {
 }
 
 input {
-  outline: none;
-  border: none;
+  outline: none !important;
+  border: none !important;
 }

@@ -3,15 +3,18 @@
 </script>
 
 <template>
-  <Header @filteredMedicalCenters="updateMedicalCenters" @search="searchQuery => this.searchQuery = searchQuery"/>
+  <Header @update="search" @search="searchQuery => this.searchQuery = searchQuery"/>
   <main>
     <div class="container">
       <div class="search-result">
-        По запросу "<span>{{this.searchQuery}}</span>" результатов: <span>{{this.medicalCenters.length}}</span>
+        По запросу "<span>{{searchQuery}}</span>" результатов: <span>{{filteredMedicalCenters.length}}</span>
       </div>
     </div>
+    <div class="container !mb-5 !grid-cols-1">
+      <drop-down-list :propSelectedControlPoint="selectedControlPoint" :controlPoints="controlPoints" @controlPointSelected="onControlPointSelected"></drop-down-list>
+    </div>
     <div class="container">
-      <medical-center-card v-for="medicalCenter in medicalCenters" :key="medicalCenter.id" :medical-center="medicalCenter"></medical-center-card>
+      <medical-center-card v-if="renderComponent" :propSelectedControlPoint="selectedControlPoint" :controlPoints="controlPoints" v-for="medicalCenter in filteredMedicalCenters" :key="medicalCenter.id" :medical-center="medicalCenter"></medical-center-card>
     </div>
     <div class="container" style="grid-template-columns: 1fr;">
       <div id="map" style="width: 100%; height:500px; border-radius: 10px; margin: 30px 0 30px 0;"></div>
@@ -27,6 +30,7 @@ import axios from "axios";
 import DG from "2gis-maps"
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import DropDownList from "@/components/DropDownList.vue";
 
 export default {
   name: 'App',
@@ -34,12 +38,23 @@ export default {
     Footer,
     Header,
     MedicalCenterCard,
+    DropDownList,
   },
   data() {
     return {
       medicalCenters: [],
+      controlPoints: [],
       searchQuery: "",
+      selectedControlPoint: "",
+      filteredMedicalCenters: [],
+      queryString: new URLSearchParams(window.location.search),
+      renderComponent: true,
     };
+  },
+  beforeMount() {
+    if (this.queryString.get('controlPoint') !== null) {
+      this.selectedControlPoint = this.queryString.get('controlPoint');
+    }
   },
   mounted() {
     var map;
@@ -49,25 +64,55 @@ export default {
         zoom: 12
       });
     });
+
+    axios.get('../public/controlPointsData.json')
+        .then(response => {
+          this.controlPoints = response.data;
+        })
+        .catch(error => {
+          console.error(error);
+        });
     axios.get('../public/data.json')
         .then(response => {
           this.medicalCenters = response.data;
+          this.filteredMedicalCenters = response.data;
 
           for(const medicalCenter of this.medicalCenters) {
             if (medicalCenter.latitude && medicalCenter.longitude) {
               DG.marker([medicalCenter.latitude, medicalCenter.longitude]).addTo(map).bindPopup(medicalCenter.title + ' (' + medicalCenter.address + ')');
             }
           }
+
+          this.onControlPointSelected(this.selectedControlPoint);
         })
         .catch(error => {
           console.error(error);
         });
-
   },
   methods: {
-    updateMedicalCenters(filteredMedicalCenters) {
-      this.medicalCenters = filteredMedicalCenters;
+    onControlPointSelected(selectedControlPoint) {
+      this.selectedControlPoint = selectedControlPoint;
+      this.search(this.searchQuery);
     },
+    forceRerender() {
+      // Сначала скроем компонент
+      this.renderComponent = false;
+
+      this.$nextTick(() => {
+        // А потом покажем снова
+        this.renderComponent = true;
+      });
+    },
+    search(searchQuery) {
+      let validMedCenters = this.selectedControlPoint === "" ? [] : this.controlPoints[this.selectedControlPoint].medList;
+      const lowerCaseQuery = searchQuery.toLowerCase().trim();
+      this.filteredMedicalCenters = this.medicalCenters.filter(medicalCenter => {
+        const lowerCaseTitle = medicalCenter.title.toLowerCase();
+        const lowerCaseAddress = medicalCenter.address.toLowerCase();
+        return (lowerCaseTitle.includes(lowerCaseQuery) || lowerCaseAddress.includes(lowerCaseQuery)) && (validMedCenters.length === 0 || validMedCenters.includes(medicalCenter.id));
+      });
+      this.forceRerender();
+    }
   },
 };
 </script>

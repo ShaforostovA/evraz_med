@@ -1,62 +1,155 @@
 [
   {
-    "title": "Фельдшерско-акушерский пункт",
-    "address": "Центральная, 7а пос. Зональный, Горноуральский городской округ, Свердловская область, 622048 1 этаж",
-    "image": "public/img/1.jpg",
-    "two_gis": "https://2gis.ru/ntagil/directions/points/%7C60.119768%2C57.886745%3B6333715257004541",
-    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/?ll=60.121915%2C57.886543&mode=routes&rtext=~57.887167%2C60.119705&rtt=auto&ruri=~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo0MDIwMzc5MTgwEroB0KDQvtGB0YHQuNGPLCDQodCy0LXRgNC00LvQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCT0L7RgNC90L7Rg9GA0LDQu9GM0YHQutC40Lkg0LPQvtGA0L7QtNGB0LrQvtC5INC-0LrRgNGD0LMsINC_0L7RgdGR0LvQvtC6INCX0L7QvdCw0LvRjNC90YvQuSwg0KbQtdC90YLRgNCw0LvRjNC90LDRjyDRg9C70LjRhtCwLCA3IgoNlHpwQhV1jGdC&z=16.63",
-    "google_map": "https://www.google.com/maps/dir//%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D1%83%D0%BB.,+7,+%D0%97%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9,+%D0%A1%D0%B2%D0%B5%D1%80%D0%B4%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB.,+622048/@57.887582,60.1146832,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x43ea7c6af1f2c401:0xe4f125b28135c91d!2m2!1d60.1195541!2d57.8875792?entry=ttu",
-    "latitude": 57.929604,
-    "longitude": 60.01164
+    "id": 1,
+    "title": "Здравпункт АТЦ",
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "latitude": "57.914213",
+    "longitude": "60.041552"
   },
   {
-    "title": "Нижнетуринская центральная городская больница",
-    "address": "Юбилейная улица, 4 д. Большая Именная, Нижнетуринский городской округ, Свердловская область, 624223 1 этаж",
-    "image": "public/img/2.png",
-    "two_gis": "https://2gis.ru/ntagil/directions/points/%7C59.868099%2C58.555853%3B70000001076532385",
-    "yandex_map": "",
-    "google_map": "",
+    "id": 2,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт Базовый",
+    "latitude": "57.921577",
+    "longitude": "60.013041"
+  },
+  {
+    "id": 3,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт ДЦ",
+    "latitude": "57.918657",
+    "longitude": "60.009330"
+  },
+  {
+    "id": 4,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт ККП",
+    "latitude": "57.920781",
+    "longitude": "59.997216"
+  },
+  {
+    "id": 5,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт КХП",
+    "latitude": "57.914192",
+    "longitude": "60.011200"
+  },
+  {
+    "id": 6,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт КБЦ",
+    "latitude": "57.924124",
+    "longitude": "60.019960"
+  },
+  {
+    "id": 7,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт КЦ",
+    "latitude": "57.918706",
+    "longitude": "60.027681"
+  },
+  {
+    "id": 8,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт КСЦ",
+    "latitude": "57.932843",
+    "longitude": "60.029368"
+  },
+  {
+    "id": 9,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт РБЦ",
+    "latitude": "57.930310",
+    "longitude": "60.028283"
+  },
+  {
+    "id": 10,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт ТЭЦ",
+    "latitude": "57.919993",
+    "longitude": "60.008598"
+  },
+  {
+    "id": 11,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт УГМ",
+    "latitude": "57.937678",
+    "longitude": "60.041243"
+  },
+  {
+    "id": 12,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт УЖДТ",
+    "latitude": "57.924331",
+    "longitude": "59.998098"
+  },
+  {
+    "id": 13,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт УК",
+    "latitude": "57.928041",
+    "longitude": "60.011935"
+  },
+  {
+    "id": 14,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт ФЛЦ",
+    "latitude": "57.932356",
+    "longitude": "60.025260"
+  },
+  {
+    "id": 15,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт ЦПШБ",
+    "latitude": "57.933396",
+    "longitude": "60.050274"
+  },
+  {
+    "id": 16,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт ЦПШ УПОШ",
     "latitude": "",
     "longitude": ""
   },
   {
-    "title": "Шалинская центральная городская больница",
-    "address": "Улица Первомайская, 5 пос. Вырубки, Шалинский городской округ, Свердловская область, 623033",
-    "image": "public/img/3.jpg",
-    "two_gis": "https://2gis.ru/ntagil/directions/points/%7C59.24883%2C57.335241%3B70000001076432667",
-    "yandex_map": "",
-    "google_map": "",
-    "latitude": "",
-    "longitude": ""
-  },
-  {
-    "title": "Фельдшерско-акушерский пункт",
-    "address": "Трактовая улица, 9 пос. Мурзинка, Новоуральский городской округ, Свердловская область",
-    "image": "public/img/4.jpg",
-    "two_gis": "https://2gis.ru/ntagil/directions/points/%7C60.094359%2C57.17491%3B70000001083461604",
-    "yandex_map": "",
-    "google_map": "",
-    "latitude": "",
-    "longitude": ""
-  },
-  {
-    "title": "Нижнетуринская центральная городская больница",
-    "address": "Улица Зелёная, 18 пос. Платина, Нижнетуринский городской округ, Свердловская область, 624230 1 этаж",
-    "image": "public/img/5.jpg",
-    "two_gis": "https://2gis.ru/ntagil/directions/points/%7C60.189643%2C58.64222%3B70000001082005416",
-    "yandex_map": "",
-    "google_map": "",
-    "latitude": "",
-    "longitude": ""
-  },
-  {
-    "title": "Уральский клинический лечебно-реабилитационный центр им. В.В. Тетюхина",
-    "address": "Уральский проспект, 552 филиала Гальяно-Горбуновский массив ж/м, Тагилстроевский район, Нижний Тагил, Свердловская область, 622049 5 этажей",
-    "image": "public/img/6.jpg",
-    "two_gis": "https://2gis.ru/ntagil/directions/points/%7C59.960941%2C57.880167%3B70000001007161171",
-    "yandex_map": "",
-    "google_map": "",
-    "latitude": "",
-    "longitude": ""
+    "id": 17,
+    "address": "",
+    "image": "",
+    "yandex_map": "https://yandex.ru/maps/11168/nizhniy-tagil/",
+    "title": "Здравпункт экстренной помощи",
+    "latitude": "57.921577",
+    "longitude": "60.013041"
   }
 ]

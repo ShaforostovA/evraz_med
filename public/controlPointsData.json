@@ -1,0 +1,49 @@
+[
+  {
+    "id": 0,
+    "title": "УДР",
+    "latitude": 57.910463,
+    "longitude": 60.009604,
+    "medList": [4, 10, 2, 17, 3, 6, 9, 11, 8, 14, 15]
+
+  },
+  {
+    "id": 1,
+    "title": "УПП",
+    "latitude": 57.929629,
+    "longitude": 60.002063,
+    "medList": [12]
+
+  },
+  {
+    "id": 2,
+    "title": "Центральная",
+    "latitude": 57.928041,
+    "longitude": 60.011935,
+    "medList": [13]
+
+  },
+  {
+    "id": 3,
+    "title": "центральный КХП",
+    "latitude": 57.910463,
+    "longitude": 60.009604,
+    "medList": [5]
+
+  },
+  {
+    "id": 4,
+    "title": "Южная",
+    "latitude": 57.910970,
+    "longitude": 60.041054,
+    "medList": [1, 7]
+
+  },
+  {
+    "id": 5,
+    "title": "ЦПШ УПОШ данные неверны",
+    "latitude": 57.929604,
+    "longitude": 60.01164,
+    "medList": [16]
+  }
+]
