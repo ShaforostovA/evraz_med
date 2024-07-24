@@ -6,10 +6,13 @@
       <h3 class="card-title">{{ medicalCenter.title }}</h3>
       <p class="card-address">{{ medicalCenter.address }}</p>
       <div class="card-actions">
-        <a title="Построить маршрут Yandex Maps" v-if="selectedControlPoint != undefined && selectedControlPoint.latitude != undefined && selectedControlPoint.longitude && medicalCenter.latitude != '' && medicalCenter.longitude != '' && medicalCenter.yandex_map != ''" :href="medicalCenter.yandex_map + `?rtext=${this.selectedControlPoint.latitude}%2C${this.selectedControlPoint.longitude}~${medicalCenter.latitude}%2C${medicalCenter.longitude}&rtt=auto&ruri=~&z=18`" target="_blank" class="card-action-button yandex_maps">
+        <a title="Построить маршрут Yandex Maps" v-if="selectedControlPoint != undefined && selectedControlPoint.latitude != undefined && selectedControlPoint.longitude && medicalCenter.latitude != '' && medicalCenter.longitude != '' && medicalCenter.yandex_map != ''" :href="medicalCenter.yandex_map + `?rtext=${this.selectedControlPoint.latitude}%2C${this.selectedControlPoint.longitude}~${medicalCenter.latitude}%2C${medicalCenter.longitude}&rtt=auto&ruri=~&z=16`" target="_blank" class="card-action-button yandex_maps">
           <img src="./icons/Color_icon_color.svg" alt="Yandex Maps">
         </a>
-        <a title="Построить маршрут Yandex Maps" v-else-if="medicalCenter.yandex_map != '' && medicalCenter.latitude != '' && medicalCenter.longitude != ''" :href="medicalCenter.yandex_map + `?rtext=~${medicalCenter.latitude}%2C${medicalCenter.longitude}&rtt=auto&ruri=~&z=18`" target="_blank" class="card-action-button yandex_maps">
+        <a title="Построить маршрут Yandex Maps" v-else-if="medicalCenter.yandex_map != '' && medicalCenter.latitude != '' && medicalCenter.longitude != ''" :href="medicalCenter.yandex_map + `?rtext=~${medicalCenter.latitude}%2C${medicalCenter.longitude}&rtt=auto&ruri=~&z=16`" target="_blank" class="card-action-button yandex_maps">
+          <img src="./icons/Color_icon_color.svg" alt="Yandex Maps">
+        </a>
+        <a title="Невозможно построить маршрут Yandex Maps" v-else class="card-action-button card-action-button-disable yandex_maps">
           <img src="./icons/Color_icon_color.svg" alt="Yandex Maps">
         </a>
       </div>
@@ -128,6 +131,20 @@ export default {
   max-height: 60px;
   width: 100%;
   display: block;
+}
+
+.card-action-button-disable {
+  background-color: #ccc;
+}
+
+.card-action-button-disable img {
+  filter: grayscale(1);
+}
+
+.card-action-button-disable:hover {
+  border: 1px solid #ccc !important;
+  transform: scale(1.0);
+  cursor: not-allowed;
 }
 
 </style>

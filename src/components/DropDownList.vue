@@ -4,9 +4,9 @@
 
 <template>
   <div id="v-model-select" class="drop-down-list">
-    <select v-model="selectedControlPoint" class="bg-gray-50 duration-300 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-[var(--color-border-hover)] focus:border-[var(--color-border-hover)] block w-full p-2.5">
-      <option class="font-bold" value="" @click="onControlPointChange">АКПП не выбран</option>
-      <option v-for="controlPoint in controlPoints" :value="controlPoint.id" @click="onControlPointChange">АКПП: {{ controlPoint.title }}</option>
+    <select @change="onControlPointChange" v-model="selectedControlPoint" class="bg-gray-50 duration-300 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-[var(--color-border-hover)] focus:border-[var(--color-border-hover)] block w-full p-2.5">
+      <option class="font-bold" value="">АКПП не выбран</option>
+      <option v-for="controlPoint in controlPoints" :value="controlPoint.id">АКПП: {{ controlPoint.title }}</option>
     </select>
   </div>
 </template>

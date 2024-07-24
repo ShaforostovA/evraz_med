@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <Loader v-if="loading" :loading="loading"></Loader>
   <Header @update="search" @search="searchQuery => this.searchQuery = searchQuery"/>
   <main>
     <div class="container">
@@ -31,6 +32,7 @@ import DG from "2gis-maps"
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import DropDownList from "@/components/DropDownList.vue";
+import Loader from "@/components/Loader.vue"
 
 export default {
   name: 'App',
@@ -39,6 +41,7 @@ export default {
     Header,
     MedicalCenterCard,
     DropDownList,
+    Loader
   },
   data() {
     return {
@@ -49,6 +52,7 @@ export default {
       filteredMedicalCenters: [],
       queryString: new URLSearchParams(window.location.search),
       renderComponent: true,
+      loading: true
     };
   },
   beforeMount() {
@@ -57,11 +61,14 @@ export default {
     }
   },
   mounted() {
+    if (this.loading) {
+      document.body.style.overflow = 'hidden';
+    }
     var map;
     DG.then(function () {
       map = DG.map('map', {
-        center: [57.91, 59.96],
-        zoom: 12
+        center: [57.927242, 60.020569],
+        zoom: 13
       });
     });
 
@@ -88,6 +95,8 @@ export default {
         .catch(error => {
           console.error(error);
         });
+    this.loading = false;
+    document.body.style.overflow = 'auto';
   },
   methods: {
     onControlPointSelected(selectedControlPoint) {
