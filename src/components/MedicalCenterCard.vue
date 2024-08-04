@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div v-if="medicalCenter.image !== ''" class="card-image" :style="{ 'background-image': `url(${medicalCenter.image})` }"></div>
-    <div v-else class="card-image" :style="{ 'background-image': `url(public/img/no_med_img.png)` }"></div>
+    <div v-else class="card-image" :style="{ 'background-image': `url(/img/no_med_img.png)` }"></div>
     <div class="card-content">
       <h3 class="card-title">{{ medicalCenter.title }}</h3>
       <p class="card-address">{{ medicalCenter.address }}</p>
@@ -46,6 +46,19 @@ export default {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  transition-duration: .3s;
+  animation: card .3s linear forwards;
+}
+
+@keyframes card {
+  0% {
+    opacity: 0;
+    scale: .7;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
 }
 
 .card-image {

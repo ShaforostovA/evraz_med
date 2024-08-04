@@ -12,7 +12,7 @@
       <div class="search flex align-middle gap-1">
         <input placeholder="Поиск" autocomplete="off" type="text" maxlength="255" name="search" id="search" v-model="searchQuery" @input="updateSearch">
         <div class="clear-search px-2.5 flex align-middle rounded-lg cursor-pointer duration-300 hover:bg-orange-300" @click="clearSearch">
-          <img class="block" src="../../public/close.svg" alt="">
+          <img class="block" src="/close.svg" alt="">
         </div>
       </div>
     </div>
@@ -37,8 +37,10 @@ export default {
       this.$emit('update', this.searchQuery);
     },
     clearSearch() {
-      this.searchQuery = "";
-      this.updateSearch();
+      if (this.searchQuery !== "" && this.searchQuery !== undefined) {
+        this.searchQuery = "";
+        this.updateSearch();
+      }
     }
   },
 };
@@ -50,7 +52,22 @@ export default {
     margin: 0 0 2rem 0;
     position: sticky;
     top: 0;
+    animation: header .3s linear forwards;
   }
+
+  @keyframes header {
+    0% {
+      opacity: 0;
+      scale: .7;
+      translate: 0 -100%;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+      translate: 0 0;
+    }
+  }
+
   .logo {
     display: inline-flex;
     gap: 10px;
@@ -94,14 +111,19 @@ export default {
     width: 100%!important;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 720px) or (max-height: 670px) {
+
+    header {
+      padding: 1rem 0;
+      margin: 0 0 1rem 0 !important;
+    }
 
     .logo {
-      margin: 0 0 20px 0;
+      margin: 0 0 15px 0;
     }
 
     .logo h2 {
-      font-size: 26px;
+      font-size: 26px !important;
     }
 
     .container {
@@ -109,7 +131,8 @@ export default {
     }
 
     .search input {
-      padding: 15px 20px;
+      padding: 9px 20px !important;
+      font-size: 1.1rem !important;
     }
   }
 

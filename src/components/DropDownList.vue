@@ -31,7 +31,9 @@ export default {
 </script>
 
 <style scoped>
-  .drop-down-list {
-
+  @media (max-width: 720px) or (max-height: 670px) {
+    .drop-down-list select {
+      font-size: 1.175rem !important;
+    }
   }
 </style>
